@@ -1,0 +1,37 @@
+.header-bg-container{
+    background-color: rgba(255, 255, 255, 0.18);
+    height:70px;
+    width:100vw;
+}
+.navbar{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    
+}
+.link-item{
+    color:white;
+    margin-top: 10px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.site-logo{
+    height: 70px;
+    width: 70px;
+   margin-left: 10px;
+}
+
+.links-div{
+ position: absolute;
+ right: 45%;
+}
+
+@media (max-width:678px) {
+    .links-div{
+        right: 35%;
+    }
+    
+    
+}

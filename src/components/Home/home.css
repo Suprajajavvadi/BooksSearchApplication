@@ -1,0 +1,32 @@
+.home-bg-container{
+ background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+ height: 100vh;
+ width: 100vw;
+ color: rgb(0, 1, 2);
+}
+
+.home-details-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   margin-top: 10%;
+   text-align: center;
+}
+
+.view-more-books{
+background: radial-gradient(circle,rgba(63, 91, 251, 0.94) 0%, rgba(14, 20, 146, 0.85) 100%);
+color: rgb(255, 255, 255);
+border-radius:5px ;
+border: none;
+margin:10px 15px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+font-size: 9px;
+padding: 10px;
+}
+
+@media (max-width:678px) {
+    .home-details-div{
+        margin-top: 30%;
+    }
+}
