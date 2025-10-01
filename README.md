@@ -1,12 +1,6 @@
 BookSearchApplication
 
 A simple, responsive React app to search and browse books using external APIs.
-
-Project Overview
-
-BookSearchApplication is a React-based web app that lets users search for books, view details, filter results, and save favorites. The project is organized for easy development and extensibility.
-
-
 Features
 
 Search books by title, author, or ISBN
@@ -23,12 +17,9 @@ Links to OpenLibrary and Internet Archive versions
 
 Safe display of HTML-encoded titles using he library
 
-
 Tech Stack
 
 Frontend: React (Create React App)
-
-Styling: CSS
 
 HTTP Requests: axios
 
@@ -39,7 +30,6 @@ Routing: react-router-dom v6
 Icons: react-icons
 
 Folder Structure
-
 
 book-search-application/
 ├─ public/
@@ -56,11 +46,8 @@ book-search-application/
 ├─ .gitignore
 └─ README.md
 
-
-
 Component Overview
 1. App.js (Routing Setup)
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/home';
 import Books from './components/Books/books';
@@ -79,7 +66,6 @@ const App = () => {
 
 export default App;
 
-
 Uses BrowserRouter for client-side navigation
 
 Routes:
@@ -88,10 +74,7 @@ Routes:
 
 /books → Books
 
-
 2. Header.js (Navigation)
-
-
 import "./header.css";
 import { Link } from "react-router-dom";
 import logo from "../../../src/site-logo.png";
@@ -109,7 +92,6 @@ const Header = () => (
 );
 
 export default Header;
-
 
 Displays logo and navigation links
 
@@ -139,7 +121,6 @@ const Home = () => {
 };
 
 export default Home;
-
 
 Landing page with headline, description, and button to navigate to Books page
 
@@ -188,18 +169,6 @@ Displays a loader while fetching
 Passes books data to BookItem component
 
 5. BookItem.js / BookList Component
-
-Displays individual books in cards
-
-Search bar for new titles
-
-Filters results via BookFilters
-
-Modal with extended details
-
-Shows cover image, authors, year, editions, languages, availability
-
-Links to OpenLibrary and Internet Archive
 
 import React, { useState } from "react";
 import "./BookItem.css"
@@ -448,12 +417,20 @@ function BookList({ data, searchInput, setSearchInput }) {
 
 export default BookList;
 
+Displays individual books in cards
+
+Search bar for new titles
+
+Filters results via BookFilters
+
+Modal with extended details
+
+Shows cover image, authors, year, editions, languages, availability
+
+Links to OpenLibrary and Internet Archive
+
 
 6. BookFilters.js
-
-Filters by published year (range) and availability
-
-Calls parent callback onFilterChange to update filtered books
 
 import { useState } from "react";
 import "./BookFilters.css";
@@ -468,7 +445,6 @@ export default function BookFilters({ onFilterChange }) {
 
   return (
     <div className="book-filters">
-      {/* First Published Year Range */}
       <div className="filter-section">
         <label className="filter-label">Published Year</label>
         <input
@@ -483,7 +459,6 @@ export default function BookFilters({ onFilterChange }) {
         <span className="year-text">Year: {year}</span>
       </div>
 
-      {/* Availability */}
       <div className="filter-section">
         <label className="filter-label">Availability</label>
         <select
@@ -497,7 +472,6 @@ export default function BookFilters({ onFilterChange }) {
         </select>
       </div>
 
-      {/* Apply */}
       <div className="filter-apply">
         <button onClick={handleFilterChange} className="apply-btn">
           Apply
@@ -507,6 +481,13 @@ export default function BookFilters({ onFilterChange }) {
   );
 }
 
+Filters books by year and availability
+
+Calls onFilterChange to update parent component (BookList)
+
+Uses React useState for controlled inputs
+
+Styled via BookFilters.css
 
 
 Setup & Installation
@@ -521,21 +502,17 @@ Start dev server: npm start
 Build for production: npm run build
 
 
-
 Notes:
-
-BookFilters allows users to filter book results by Published Year (range slider) and Availability (public/private).
-
-Calls onFilterChange callback to update filters in the parent component (BookList).
-
-Uses React useState for controlled inputs.
-
-Styled via BookFilters.css.
-
-Includes an Apply button to trigger the filter updates.
 
 Ensure axios and react-icons are installed
 
 CSS files handle responsive layout and modal styling
 
 HTML-encoded book titles handled via he library
+
+
+
+
+
+
+
